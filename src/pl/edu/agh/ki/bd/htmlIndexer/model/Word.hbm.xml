@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="pl.edu.agh.ki.bd.htmlIndexer.model">
+ 
+    <class name="Word">
+        <id name="content" type="text">
+        </id>
+
+        <set name="sentences" table="WordSentence">
+            <key column="wordId"/>
+            <many-to-many column="sentenceId" class="Sentence"/>
+        </set>
+    </class>
+ 
+</hibernate-mapping>
+
+
+
